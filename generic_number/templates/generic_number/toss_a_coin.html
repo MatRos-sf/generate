@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Rzut monetą{% endblock %}
+
+{% block content %}
+    {% if choiced %}
+
+        <div class="alert alert-primary" role="alert">
+            Wylosowano: {{ choiced }}
+        </div>
+
+        <div class="form-group">
+            <form action="." method="get">
+
+                <input type="submit" name='Click' value="Rzuć ponownie">
+            </form>
+        </div>
+
+    {% else %}
+        <h1 class="display-3">Rzuć Monetą. </h1>
+
+        <div class="form-group">
+            <form action="." method="get">
+                <input type="submit" name='Click' value="Rzuć">
+            </form>
+        </div>
+    {% endif %}
+{% endblock  %}

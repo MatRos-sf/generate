@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="{% url 'random' %}" class="btn btn-primary" role="button" data-bs-toggle="button">Liczba</a>
+        <a href="{% url 'random_list' %}" class="btn btn-primary" role="button" data-bs-toggle="button">Lista</a>
+        <a href="{% url 'random_dice' %}" class="btn btn-primary" role="button" data-bs-toggle="button">Kostka</a>
+        <a href="{% url 'generic_password' %}" class="btn btn-primary" role="button" data-bs-toggle="button">Generuj hasło</a>
+        <a href="{% url 'toss_a_coin' %}" class="btn btn-primary" role="button" data-bs-toggle="button">Moneta</a>
+    </div>
+{% endblock %}

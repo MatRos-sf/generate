@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Toss a coin{% endblock %}
+
+{% block content %}
+
+    {% for i in tab %}
+        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+          może tutaj {{ i }}
+        </button>
+    {% endfor %}
+
+{% endblock %}

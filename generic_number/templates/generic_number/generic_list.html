@@ -1,0 +1,55 @@
+
+{% extends "base.html" %}
+{% block title %}Generic number{% endblock %}
+
+{% block content %}
+    {% if drew %}
+
+        <div class="alert alert-primary" role="alert">
+            Wylosowano:
+
+            {% for i in drew %}
+                {{ i }}
+                {% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <form action="." method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" name='list' value="random">
+            </form>
+        </div>
+
+    {% else %}
+        <h1 class="display-3">Wpisz listę która ma być wylosowana.</h1>
+        <p class="lead">
+                Wskazówki:
+        </p>
+       <p class="lead">
+                Poszczególne elementy rozdzielaj enteren,
+        </p>
+       <p class="lead">
+                Jeżeli chcesz losowanie z powtórzeniami zaznacz Repeat.
+                Uwaga!! Jeżeli nie zaznaczysz Repeat, a Amount będzie większy niż długość listy zostanie zwrócona ta sama lista tylko wymieszna.
+        </p>
+       <p class="lead">
+                <strong>Uwaga!!</strong> Jeżeli nie zaznaczysz Repeat, a Amount będzie większy niż długość listy zostanie zwrócona ta sama lista tylko wymieszna.
+        </p>
+
+
+
+        <h1></h1>
+        <h2></h2>
+        <div class="form-group">
+            <form action="." method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                <input type="submit" name='list' value="random">
+            </form>
+        </div>
+    {% endif %}
+{% endblock  %}
